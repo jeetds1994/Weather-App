@@ -22,7 +22,7 @@ export default class WeatherBox extends React.Component{
   render(){
     return(
       <div>
-        {this.props.location}
+        <h1 id="location">{this.props.location}</h1>
 
         {this.props.periods.length > 1 && <FilterBy filterParm={this.state.tempFormat}
         changeFilterType={this.changeFilterType}/>}

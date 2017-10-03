@@ -33,10 +33,10 @@ class App extends Component {
       .then(resp => resp.json())
       .then(data => {
         if(data.success){
-          debugger
+          //if response is good setState
           this.setState({
             periods: data.response[0].periods,
-            location: data.response[0].profile.tz.replace("America/")})
+            location: data.response[0].profile.tz.replace("America/", '')})
         }
       })
     }

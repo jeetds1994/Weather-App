@@ -14,6 +14,7 @@ const DayContainer = ({period, filterParm}) => {
         {Date(period.validTime).slice(0, 15)}
       </Card.Header>
 
+      {/* I know this is not pretty, the best soltion for changing the period would be at the top level*/}
       <Card.Description>
         High: {filterParm === "F" && period.maxTempF}
         {filterParm === "C" && period.maxTempC}
