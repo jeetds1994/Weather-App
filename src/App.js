@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   searchChange = (event) => {
+    //Makes sure numbers are being entered and will not allow more than 6 digits
     if(!isNaN(event.target.value) && event.target.value.length < 6){
       this.setState({
         searchField: event.target.value
@@ -25,6 +26,7 @@ class App extends Component {
 
   submitForm = (event) => {
     event.preventDefault()
+    //makes sure user cannot make a bad request by ensuring zip code length is atleast 5
     if(this.state.searchField.length == 5){
       let url = `http://api.aerisapi.com/forecasts/${this.state.searchField}?client_id=OotpWAGbWVCd6dsDPxkbG&client_secret=YIBo2h6KDfURQdrs83NYZAIvKgcj0YyGrEnRBgYp`
       fetch(url)

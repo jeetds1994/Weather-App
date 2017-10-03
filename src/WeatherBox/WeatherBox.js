@@ -11,6 +11,7 @@ export default class WeatherBox extends React.Component{
   }
 
   changeFilterType = (e, { name }) => {
+    //handles change when changing filter from Fahrenheit to Celsius and vice versa
     if(name === "Fahrenheit"){
       this.setState({ tempFormat: "F"})
     }else if(name === "Celsius"){
@@ -22,7 +23,9 @@ export default class WeatherBox extends React.Component{
     return(
       <div>
         {this.props.location}
-        {this.props.periods.length > 1 && <FilterBy filterParm={this.state.tempFormat} changeFilterType={this.changeFilterType}/>}
+
+        {this.props.periods.length > 1 && <FilterBy filterParm={this.state.tempFormat}
+        changeFilterType={this.changeFilterType}/>}
         <DaysContainer periods={this.props.periods} filterParm={this.state.tempFormat}/>
       </div>
     )
