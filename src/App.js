@@ -37,6 +37,8 @@ class App extends Component {
           this.setState({
             periods: data.response[0].periods,
             location: data.response[0].profile.tz.replace("America/", '')})
+        }else{
+          alert("can't find or invalid")
         }
       })
     }
